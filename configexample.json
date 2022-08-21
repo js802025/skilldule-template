@@ -1,6 +1,8 @@
 {"general":{
     "base_url":"http://127.0.0.1/",
-    "import_option": "portal"
+    "import_option": "portal",
+    "school_name": "School Name",
+    "myschoolapp_url": ""
 },
 "color":{
     "MAIN": "#0072CF",

@@ -28,6 +28,7 @@ To get started youw will need to fill out certain info in the config file such a
 
 ## Setting Up Your Skilldule
 ### Follow the Template
+-Change the setup page to reflect your processes.
 After you follow the guidelines above you should be able to set up your skilldule on a hosting service and start sharing it with others.
 (readthedocs coming soon)
 ### Custom Setups

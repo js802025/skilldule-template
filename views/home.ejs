@@ -144,7 +144,8 @@ background-position: center;
       </div>
       <div class="modal-body desktop">
 
-        <p>To get your classes, open the console(CMD-OPT-J on Chrome) on the <% if (config.general.import_option === "portal") {%><a href="https://fwparker.myschoolapp.com/app/student#studentmyday/progress" target="_blank">Progress page of the Parker Portal</a><%} else {%><a href="https://classroom.google.com/">Classes page on Google Classroom</a><% } %>, then paste the code(from the button below) and hit return.</p>
+        <p>To get your classes, open the console(CMD-OPT-J on Chrome) on the <% if (config.general.import_option === "portal") {%><a href="<%- config.general.myschoolapp_url%>/app/student#studentmyday/progress" target="_blank">Progress page of the <%- config.general.school_name%> Portal</a><%} else {%><a href="https://classroom.google.com/">Classes page on Google Classroom</a><% } %>, then paste the code(from the button below) and hit return.</p>
+
 <div class="text-center codeBtn"><button class="btn btn-primary" onclick="copyCode()" id="copyCode">Copy Code</button></div>
 <div id="code" class="hidden pt-4">
 <p>Select and copy this code:</p>
