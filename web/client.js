@@ -41,7 +41,7 @@ function copyCode() {
   //     }
   // }
   // console.log(JSON.stringify(out))
-  var text = document.getElementById("grabber").innerHTML;
+  var text = $("#grabber").text();
 
 try {
   navigator.clipboard.writeText(text).then(function() {
