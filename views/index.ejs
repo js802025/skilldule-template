@@ -13,25 +13,18 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://skilldule.herokuapp.com/">
+<meta property="og:url" content="<%- config.general.base_url %>">
 <meta property="og:title" content="Skilldule">
 <meta property="og:description" content="A colorful schedule viewer with homework, lunches and mxes.">
-<meta property="og:image" content="https://skilldule.herokuapp.com/images/SkillduleLogo.png">
+<meta property="og:image" content="<%- config.general.base_url%>/images/SkillduleLogo.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://skilldule.herokuapp.com/">
+<meta property="twitter:url" content="<%- config.general.base_url%>/">
 <meta property="twitter:title" content="Skilldule">
 <meta property="twitter:description" content="A colorful schedule viewer with homework, lunches and mxes.">
-<meta property="twitter:image" content="https://skilldule.herokuapp.com/images/SkillduleLogo.png">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J7JBLVP6H9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta property="twitter:image" content="<%- config.general.base_url%>/images/SkillduleLogo.png">
 
-  gtag('config', 'G-J7JBLVP6H9');
-</script>
 
 
     <link href="parkdule.css" rel="stylesheet">
@@ -64,7 +57,7 @@
     <script src="lib/knockout.mapping-debug.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="client.js"></script>
+<script src="client.js"></script>
     <script>
     $(function () {
     <%  if(Object.entries(user).length > 0) { %>
@@ -75,10 +68,10 @@
     <% } %>
     })
 
-    var baseUrl = <%- config.general.base_url %> ;
 
 
     </script>
+    
     <title>WITANDSKILLDULE</title>
   </head>
   <body class="bg-dark text-white">
@@ -128,7 +121,7 @@
 
 </nav>
 
-
+<div class="hidden" id="baseUrl"><%- config.general.base_url%></div>
 
 <div class="container-fluid">
   <div class="row justify-content-center text-center">

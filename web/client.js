@@ -1,5 +1,7 @@
 
+var baseUrl;
 $(function () {
+  $("#baseUrl").html()
   if (!document.cookie.includes("userID")) {
 //     var myModal = new bootstrap.Modal(document.getElementById('setSchedule'), {
 //   keyboard: false,
@@ -7,7 +9,7 @@ $(function () {
 // });
   myModal.show();
   } else {
-    document.getElementById("qrcode").src = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://skilldule.herokuapp.com/setSchedule?schedule="+ getCookie("userID").replaceAll("%26", "AND");
+    document.getElementById("qrcode").src = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+baseUrl+"/setSchedule?schedule="+ getCookie("userID").replaceAll("%26", "AND");
     console.log(baseUrl+"/setSchedule?schedule="+ getCookie("userID").replace("%26", "AND"))
     if (JSON.parse(decodeURIComponent(getCookie("userID"))).version != "v3") {
       var myModal = new bootstrap.Modal(document.getElementById('v3'), {
@@ -55,7 +57,7 @@ try {
 }
 
 function copyLink() {
-  var text = "https://skilldule.herokuapp.com/setSchedule?schedule="+ getCookie("userID").replaceAll("%26", "AND");
+  var text = baseUrl+"/setSchedule?schedule="+ getCookie("userID").replaceAll("%26", "AND");
   navigator.clipboard.writeText(text).then(function() {
     document.getElementById("copyLink").innerText = "Copied!"
     document.getElementById("copyLink").classList.remove("btn-primary")
