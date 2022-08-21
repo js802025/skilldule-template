@@ -523,14 +523,20 @@ console.log(JSON.stringify(out))
                     </div>
           </div></li><%  }}%>
 
-            <% }} else { %>
+            <% }} else if ("homework" in user.settings) { %>
               <li><div class="card mt-4" style="width: 20rem; background-color: #0072CF">
                         <div class="card-body">
-                        <h5 class="card-title text-center">Setup Homework!</h5>
+                        <h5 class="card-title text-center">No Homework!</h5>
                     </div>
               </div></li>
 
-              <%}%>
+              <%} else {%>
+                <li><div class="card mt-4" style="width: 20rem; background-color: #0072CF">
+                  <div class="card-body">
+                  <h5 class="card-title text-center">Setup Homework!</h5>
+              </div>
+        </div></li>
+                <%} %>
         </ul>
   </div>
 
