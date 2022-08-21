@@ -1,0 +1,30 @@
+{"general":{
+    "base_url":"http://127.0.0.1/",
+    "import_option": "portal"
+},
+"color":{
+    "MAIN": "#0072CF",
+    "A": "#2CBF1B" ,
+    "B": "#F5B700",
+    "C": "#DC0073",
+    "D": "#FE5E41",
+    "E": "#623061" ,
+    "F": "#DB0030",
+    "CLARK": "#0eaec7",
+    "WEBSTER": "#15619e",
+    "ADV": "#0072CF"
+},
+"discord":{
+    "use_skilldule_chats": true,
+    "token": "",
+    "guild_id": "",
+    "client_id": "",
+    "client_secret": "",
+    "oauth2_url": ""
+},
+"gc":{
+    "use_gc":true,
+    "path_to_credentials": "./credentials.json"
+}}
+
+
