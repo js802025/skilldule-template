@@ -353,7 +353,7 @@ app.get("/processInput", (req, res) => {
       })
       
     } else {
-      classes = {"classes":classes, "settings":{"tname":true, "rnumber":false, "period":false, "wschedule":true}, "version":"v3"}
+      classes = {"classes":classes, "settings":{"tname":true, "rnumber":false, "period":false, "wschedule":false}, "version":"v3"}
       res.cookie("userID", JSON.stringify(classes), {maxAge:31556952000})
       res.redirect("/")
     }
