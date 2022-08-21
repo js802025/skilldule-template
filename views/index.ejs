@@ -242,7 +242,7 @@
         <% master[dayIndex+1].forEach(function(block) { %>
           <% if (block[2] === true || block[1] in user || user.settings.wschedule) { %>
 
-            <li>     <% if (block[1] in user) { %>
+            <li>     <% if (block[1] in user && user[block[1]][2].main != true) { %>
                    <a data-bs-target="#<%= user[block[1]][0].replace(/ /g, "")%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <% if (user[block[1]].length === 4) { %>
               <% if ("color" in user[block[1]][2]) { %>
                 <%= colors[user[block[1]][2].color]%>
@@ -263,6 +263,11 @@
                         <% } if ("settings" in user && user.settings.period) {%>
                             <%= block[1] %><br> %>
                         <%} %>
+                <% } else if (block[1] in user && user[block[1]][2].main) {%>
+                  <a data-bs-target="#<%=user[block[1]][0].replace(/ /g, "")%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <%= colors[user[block[1]][2].color] %>">
+                    <div class="card-body">
+                    <h5 class="card-title"><%= user[block[1]][0] %></h5>
+                    <p class="card-text">
                 <% } else {%>
                   <a data-bs-target="#<%=block[1]%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <%= block[3] %>">
                     <div class="card-body">
@@ -288,9 +293,9 @@
         <ul class="mx-auto justify-content-center">
           <% if (master[day].length > 0) {%>
           <% master[day].forEach(function(block) { %>
-            <% if (block[2] === true || block[1] in user) { %>
+            <% if (block[2] === true || block[1] in user || user.settings.wschedule) { %>
 
-              <li>     <% if (block[1] in user) { %>
+              <li>     <% if (block[1] in user && user[block[1]][2].main != true) { %>
                      <a data-bs-target="#<%= user[block[1]][0].replace(/ /g, "")%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <% if (user[block[1]].length === 4) { %>
                 <% if ("color" in user[block[1]][2]) { %>
                   <%= colors[user[block[1]][2].color]%>
@@ -310,6 +315,11 @@
                           <% } if ("settings" in user && user.settings.period) {%>
                               <%= block[1] %><br> %>
                           <%} %>
+                  <% } else if (block[1] in user && user[block[1]][2].main) {%>
+                    <a data-bs-target="#<%=user[block[1]][0].replace(/ /g, "")%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <%= colors[user[block[1]][2].color] %>">
+                      <div class="card-body">
+                      <h5 class="card-title"><%= user[block[1]][0] %></h5>
+                      <p class="card-text">
                   <% } else {%>
                     <a data-bs-target="#<%= block[1].replace(/ /g, "")%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <%= block[3] %>">
                       <div class="card-body">

@@ -23,8 +23,10 @@ async function retrieveHomework(classes, res, master, currPeriod, nextPeriod, ti
             } else if (k.includes("Webster")) {
               k = "Webster"
             }
-            homework[v[0]] = {"hw":{}, block:k}
-            hclasses[v[0]] = {"hw":[], block:k}
+            if (!v[2].main) {
+              homework[v[0]] = {"hw":{}, block:k}
+              hclasses[v[0]] = {"hw":[], block:k}
+            }
           }
         }
       }
@@ -134,8 +136,10 @@ async function retrieveHomework(classes, res, master, currPeriod, nextPeriod, ti
           } else if (k.includes("Webster")) {
             k = "Webster"
           }
+          if (!v[2].main) {
           homework[v[0]] = {"hw":{"Setup Homework":["Go to settings and follow directions."]}, block:k}
           hclasses[v[0]] = {"hw":[], block:k}
+          }
         }
       }
     }

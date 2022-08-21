@@ -353,7 +353,7 @@ app.get("/processInput", (req, res) => {
       })
       
     } else {
-      classes = {"classes":classes, "settings":{"tname":true, "rnumber":false, "period":false}, "version":"v3"}
+      classes = {"classes":classes, "settings":{"tname":true, "rnumber":false, "period":false, "wschedule":true}, "version":"v3"}
       res.cookie("userID", JSON.stringify(classes), {maxAge:31556952000})
       res.redirect("/")
     }
@@ -392,7 +392,7 @@ app.get("/connectDiscord", (req, res) => {
   fetch("https://discord.com/api/v10/oauth2/token", { method:"POST", body: params}).then(response => response.json()).then((response) => {
     console.log(response)
     fetch("https://discord.com/api/v6/users/@me", { headers: { Authorization: "Bearer " + response.access_token}}).then(e => e.json()).then((user) => {
-      fetch("https://discord.com/api/guilds/"+config.discord.guild_id+"/members/" + user.id, { method:"PUT", headers: { Authorization: "Bot OTkyODgwMzc3MTI5NTk4OTk3.GxTUuh.hyomLjQd-pmHtiM41T6R4aiudujSxD-myESn6Q", "Content-Type":"application/json"}, body: JSON.stringify({access_token: response.access_token})}).then(a => {
+      fetch("https://discord.com/api/guilds/"+config.discord.guild_id+"/members/" + user.id, { method:"PUT", headers: { Authorization: "Bot "+config.discord.token, "Content-Type":"application/json"}, body: JSON.stringify({access_token: response.access_token})}).then(a => {
           client.users.fetch(user.id).then((us) => {
           var u = JSON.parse(req.cookies.userID)
           u.settings.discord = user.id

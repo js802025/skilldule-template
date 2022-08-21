@@ -3,6 +3,7 @@
 
 //Available params:
 //color: "A", "B", "C", "D", "E", "F"
+//main: true/false - used to indicate an alternative main class if the user doesnt have one.
 
 
 //this function processes classes obtained from a script run on the progress page of a my school apps portal
@@ -43,6 +44,8 @@ function processClasses(user) {
         out["GJ"] = ["Grape Jam", classes[c][1], params, classes[c][2]]
       }
     }}
+
+    //add alternative main class if user doesnt have one for certain periods here
 
     //keep this
     out.settings = user.settings
