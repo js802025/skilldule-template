@@ -240,7 +240,7 @@
       <ul class="mx-auto justify-content-center">
 
         <% master[dayIndex+1].forEach(function(block) { %>
-          <% if (block[2] === true || block[1] in user) { %>
+          <% if (block[2] === true || block[1] in user || user.settings.wschedule) { %>
 
             <li>     <% if (block[1] in user) { %>
                    <a data-bs-target="#<%= user[block[1]][0].replace(/ /g, "")%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <% if (user[block[1]].length === 4) { %>
@@ -571,6 +571,10 @@ console.log(JSON.stringify(out))
 <input class="form-check-input" type="checkbox" name="pe" value="true" id="flexSwitchCheckDefault" <% if (user.settings.pe) { %> checked <% } %>>
 <label class="form-check-label" for="flexSwitchCheckDefault">PE Exemption</label>
 </div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" name="wschedule" value="true" id="flexSwitchCheckDefault" <% if (user.settings.wschedule) { %> checked <% } %>>
+  <label class="form-check-label" for="flexSwitchCheckDefault">Display Whole Schedule</label>
+  </div>
 <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Assignment Webcal URL:</label>
     <input type="text" class="form-control" name="homework" id="exampleInputEmail1" aria-describedby="emailHelp" <% if (user.settings.homework) { %> placeholder="<%= user.settings.homework%>" <% } %>>

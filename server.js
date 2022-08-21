@@ -228,7 +228,7 @@ app.get('/', (req, res) => {
         currPeriod = i
         master[new Date().getDay()].slice(i+1).every((nextClass, x) => {
           let userHasClass;
-          if (nextClass[1] in user || nextClass[2] === true) { userHasClass = true } else { userHasClass = false}
+          if (nextClass[1] in user || nextClass[2] === true || user.settings.wschedule) { userHasClass = true } else { userHasClass = false}
         if (userHasClass) {
           nextPeriod = x+i+1
           return false;
@@ -249,7 +249,7 @@ app.get('/', (req, res) => {
         let userHasClass;
         let startTime = block[0][0];
         let endTime = block[0][1];
-        if (block[1] in user || block[2] === true) { userHasClass = true } else { userHasClass = false}
+        if (block[1] in user || block[2] === true || user.settings.wschedule) { userHasClass = true } else { userHasClass = false}
 
         currentDate = new Date()
         startDate = new Date(currentDate.getTime());
@@ -308,7 +308,7 @@ app.get('/setSchedule', (req, res) => {
 
 app.get('/setSettings', (req, res) => {
   var settings = {}
-  var settingslist = ["rnumber", "tname", "period", "pe", "homework"]
+  var settingslist = ["rnumber", "tname", "period", "pe", "homework", "wschedule"]
   for (var [key, value] of Object.entries(req.query)) {
     if (value === "true" || value === "false") {
       settings[key] = JSON.parse(value)
