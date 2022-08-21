@@ -151,7 +151,7 @@
                         <% } if ("settings" in user && user.settings.period) {%>
                             <%= master[day][currPeriod][1] %><br> %>
                         <%} %>
-                <% } else if (master[day][currPeriod][1] in user && user[master[day][currPeriod][1]][2].main != true) {%>
+                <% } else if (master[day][currPeriod][1] in user && user[master[day][currPeriod][1]][2].main) {%>
                   <div class="card mt-4" style="width: 15rem; background-color: <%= colors[user[master[day][currPeriod][1]][2].color] %>">
                     <div class="card-body"><a data-bs-target="#<%= user[master[day][currPeriod][1]][0].replace(/ /g, "")%>" data-bs-toggle="modal">
                     <h5 class="card-title"><%= user[master[day][currPeriod][1]][0] %></h5>
@@ -190,7 +190,7 @@
         <% if (typeof nextPeriod != 'undefined') {%>
 
         <% if (master[day][nextPeriod][2] === true || master[day][nextPeriod][1] in user) { %>
-          <% if (master[day][nextPeriod][1] in user && user[master[day][nextPeriod][1]][2] != true) { %>
+          <% if (master[day][nextPeriod][1] in user && user[master[day][nextPeriod][1]][2].main != true) { %>
                  <div class="card mt-4" style="width: 15rem; background-color: <% if (user[master[day][nextPeriod][1]].length === 4) { %>
             <% if ("color" in user[master[day][nextPeriod][1]][2]) { %>
               <%= colors[user[master[day][nextPeriod][1]][2].color]%>
@@ -210,7 +210,7 @@
                         <% } if ("settings" in user && user.settings.period) {%>
                             <%= master[day][nextPeriod][1] %><br> %>
                         <%} %>
-              <% } else if (master[day][nextPeriod][1] in user && user[master[day][nextPeriod][1]][2].main != true) {%>
+              <% } else if (master[day][nextPeriod][1] in user && user[master[day][nextPeriod][1]][2].main) {%>
                 <div class="card mt-4" style="width: 15rem; background-color: <%= colors[user[master[day][nextPeriod][1]][2].color] %>">
                   <div class="card-body"><a data-bs-target="#<%= user[master[day][nextPeriod][1]][0].replace(/ /g, "")%>" data-bs-toggle="modal">
                   <h5 class="card-title"><%= user[master[day][nextPeriod][1]][0] %></h5>
