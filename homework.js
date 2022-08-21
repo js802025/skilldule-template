@@ -6,7 +6,7 @@ const fs = require("fs")
 
 
 //probably not a great example but this works for now
-async function retrieveHomework(classes, res, master, currPeriod, nextPeriod, timeString, day, colors, dayName, req, gc_courses, oAuth2Client, lunch, assemblies, config) {
+async function retrieveHomework(classes, res, master, currPeriod, nextPeriod, timeString, day, colors, dayName, req, gc_courses, oAuth2Client, lunch, assemblies) {
     if (classes.settings.hasOwnProperty("homework") && classes.settings.homework != "") {
     ical.fromURL(classes.settings.homework, {}, async function(err, data) {
       var homework = {};
