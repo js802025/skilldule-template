@@ -1,0 +1,266 @@
+<html lang="en"><head><style id="stndz-style"></style>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Primary Meta Tags -->
+<title>WIT&amp;SKILLDULE</title>
+<meta name="title" content="WIT&amp;SKILLDULE">
+<meta name="description" content="A schedule manager.">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-J7JBLVP6H9"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-J7JBLVP6H9');
+</script>
+
+
+  <link href="parkdule.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="images/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="images/favicon-128.png" sizes="128x128">
+  <meta name="application-name" content="&nbsp;">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="images/mstile-144x144.png">
+  <meta name="msapplication-square70x70logo" content="images/mstile-70x70.png">
+  <meta name="msapplication-square150x150logo" content="images/mstile-150x150.png">
+  <meta name="msapplication-wide310x150logo" content="images/mstile-310x150.png">
+  <meta name="msapplication-square310x310logo" content="images/mstile-310x310.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+
+  <script src="lib/knockout-3.3.0.debug.js"></script>
+  <script src="lib/knockout.mapping-debug.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+html, body {
+height:100%;
+}
+.footer {
+  position: fixed;
+  bottom: 10px;
+}
+
+@media only screen and (min-device-width: 1335px) {
+  .bg {
+background-image: url("images/SkillduleLogo.png");
+min-height: 100%;
+background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+
+
+
+.caption {
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+}
+.startMobile {
+  display: none;
+}
+.icon {
+  display: none;
+}
+}
+
+@media only screen and (max-device-width: 1335px) {
+  .start {
+    display: none;
+  }
+}
+
+
+
+</style>
+  <script src="client.js"></script>
+  <script>
+  $(function () {
+
+    if(false) {
+      var myModal = new bootstrap.Modal(document.getElementById('update'));
+    myModal.show();
+  }
+
+  })
+  </script>
+  <title>WITANDSKILLDULE</title>
+</head>
+<body class="bg-dark text-white">
+
+
+
+
+<div class="container-fluid">
+
+
+
+
+<div class="bg row justify-content-center text-center">
+  <div class="caption text-center">
+    <h3 class="startMobile mt-4">WITANDSKILLDULE</h3>
+    <img class="startMobile img-fluid" src="images/SkillduleIcon.jpg">
+    <h5>Schedule, Lunch, Homework, MXes, and more all in one place.<br>
+      "Don't have a schedule, have a Skilldule."</h5>
+      <button class="btn btn-primary start" data-bs-toggle="modal" data-bs-target="#setSchedule">Get Started</button>
+      <button class="btn btn-primary startMobile" data-bs-toggle="modal" data-bs-target="#setSchedule" disabled>Setup on Desktop</button>
+
+      <br><a href="/setup"  class="mt-2" target="_blank">View Setup Guide</a><br>
+      <p class="lead startMobile">NOTE: Setup must be preformed in a browser with a console interface.</p>
+      
+  </div>
+  <div class="row footer pt-4 text-center">
+    <p class="lead">WIT&SKILLDULE is a division of the <a href="https://media.discordapp.net/attachments/784994278966951936/981220444680118312/binbows.png" target="_blank">JSFFund of America</a></p>
+</div>
+      
+
+
+</div>
+
+
+
+
+
+<div class="modal fade" id="setSchedule" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Setup WIT&SKILLDULE</h5>
+      </div>
+      <div class="modal-body desktop">
+
+        <p>To get your classes, open the console(CMD-OPT-J on Chrome) on the <% if (config.general.import_option === "portal") {%><a href="https://fwparker.myschoolapp.com/app/student#studentmyday/progress" target="_blank">Progress page of the Parker Portal</a><%} else {%><a href="https://classroom.google.com/">Classes page on Google Classroom</a><% } %>, then paste the code(from the button below) and hit return.</p>
+<div class="text-center codeBtn"><button class="btn btn-primary" onclick="copyCode()" id="copyCode">Copy Code</button></div>
+<div id="code" class="hidden pt-4">
+<p>Select and copy this code:</p>
+<pre class="bg-light text-black pt-4">
+  
+  <code id="grabber">
+    <% if (config.general.import_option === "portal"){%>
+    courses = document.getElementById("coursesContainer")
+
+    out = []
+    for (let c = 0; c < courses.children.length; c++) {
+        try {
+        o = [courses.children[c].getElementsByTagName("h3")[0].innerText, courses.children[c].getElementsByClassName("group-owner-name")[0].innerText, courses.children[c].getElementsByTagName("h5")[0].innerText.split(" |")[0]]
+        out.splice(out.length, 0, o);
+        } catch(err) {
+          //pass
+        }
+    }
+    console.log(JSON.stringify(out))
+    <% } else {%>
+      courses = document.getElementsByClassName("rZXyy")
+out = []
+for (let c = 0; c < courses.length; c++) {
+  try {
+    if (courses[c].getElementsByClassName("eDfb1d")[0].children[1].innerText != "") {
+      o = [courses[c].getElementsByClassName("z3vRcc-ZoZQ1")[0].innerText+" - 1 ("+courses[c].getElementsByClassName("eDfb1d")[0].children[1].innerText+")", courses[c].getElementsByClassName("jJIbcc")[0].innerText]
+      out.splice(out.length, 0, o);
+    }
+  } catch (err) {
+      console.log(err)
+  }
+}
+console.log(JSON.stringify(out))
+
+    <% }%>
+  </code>
+</pre>
+</div>
+      <form action="/processInput" method="get">
+        <div class="form-group mb-3 ml-3 mr-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Paste Output Here</label>
+  <textarea class="form-control" name="classes" id="setScheduleTextArea" rows="3" required></textarea>
+</div><div class="form-group mb-3 ml-3 mr-3">
+      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button></div></form>
+      <p>After setup, you can copy your schedule to a phone by clicking copy schedule from the dropdown. View Lunches, MXes and Homework by clicking the associated blocks.</p>
+  </div>
+  <div class="modal-body mobile">
+    <p>Setup must be preformed on a computer. If you are on a computer expand your browser.</p>
+  </div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="faq" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content bg-dark">
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Help!</h5>
+</div>
+<div class="modal-body">
+  <h5>FAQ:</h5>
+  <div class="accordion accordion-flush text-black" id="accordionExample">
+<div class="accordion-item">
+  <h2 class="accordion-header" id="headingOne">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      One of my classes isn't showing up.
+    </button>
+  </h2>
+  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
+      Please contact us at the email below and include the full name of the class as listed on the Parker Portal.
+    </div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header" id="headingTwo">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      My schedule reset!
+    </button>
+  </h2>
+  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
+      This is most likely because you deleted the cookies associated with WIT&amp;SKILLDULE. To prevent further resetting, refrain from deleting Skilldule's cookies (because they are very tasty).
+    </div>
+  </div>
+</div>
+<div class="accordion-item">
+  <h2 class="accordion-header" id="headingThree">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+      Who started the fire?
+    </button>
+  </h2>
+  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
+      Ryan started the fire.
+    </div>
+  </div>
+</div>
+</div>
+<div class="border-top my-3"></div>
+<h5>Contact Us:</h5>
+<p>Email: <a href="mailto:jadee@fwparker.org">Jack Adee</a></p>
+  <div class="text-center"><button class="btn btn-primary" data-bs-dismiss="modal">OK</button></div>
+</div>
+</div>
+</div>
+</div>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+  -->
+
+
+</div></body></html>

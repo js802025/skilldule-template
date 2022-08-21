@@ -1,0 +1,6 @@
+node_modules/
+Lunch*.pdf
+config.json
+credentials.json
+web/.well-known
+token.json

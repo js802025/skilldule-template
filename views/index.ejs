@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Primary Meta Tags -->
+<title>WIT&SKILLDULE</title>
+<!-- Primary Meta Tags -->
+<title>Skilldule</title>
+<meta name="title" content="Skilldule">
+<meta name="description" content="A colorful schedule viewer with homework, lunches and mxes.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skilldule.herokuapp.com/">
+<meta property="og:title" content="Skilldule">
+<meta property="og:description" content="A colorful schedule viewer with homework, lunches and mxes.">
+<meta property="og:image" content="https://skilldule.herokuapp.com/images/SkillduleLogo.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://skilldule.herokuapp.com/">
+<meta property="twitter:title" content="Skilldule">
+<meta property="twitter:description" content="A colorful schedule viewer with homework, lunches and mxes.">
+<meta property="twitter:image" content="https://skilldule.herokuapp.com/images/SkillduleLogo.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J7JBLVP6H9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J7JBLVP6H9');
+</script>
+
+
+    <link href="parkdule.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="images/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="images/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="images/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="images/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="images/mstile-310x310.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+
+    <script src="lib/knockout-3.3.0.debug.js"></script>
+    <script src="lib/knockout.mapping-debug.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="client.js"></script>
+    <script>
+    $(function () {
+    <%  if(Object.entries(user).length > 0) { %>
+      if(<%= (!("version" in user)) %>) {
+        var myModal = new bootstrap.Modal(document.getElementById('update'));
+      myModal.show();
+    }
+    <% } %>
+    })
+
+    var baseUrl = <%- config.general.base_url %> ;
+
+
+    </script>
+    <title>WITANDSKILLDULE</title>
+  </head>
+  <body class="bg-dark text-white">
+    <nav class="navbar navbar-light">
+  <div class="container-fluid text-center">
+    <button class="abs-center-x no-click btn btn-dark" style="font-size: 25px;">WIT&SKILLDULE</button>
+<div class="btn-group dropstart ms-auto">
+  <button type="button" class="btn btn-dark" style="font-size: 25px;" data-bs-toggle="dropdown" aria-expanded="false">
+    &#9776;
+  </button>
+  <ul class="dropdown-menu" style="background-color: #0072CF">
+    <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#cs">Copy Schedule</button></li>
+    <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#setSchedule">Change Schedule</button></li>
+
+    <% if ("settings" in user) {%>
+      <% if ("homework" in user.settings || "classroom" in user.settings) {%>
+        <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#homework">Homework</button></li>
+      <%}%>
+      <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Lunch">Lunch</button></li>
+    <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#settings">Settings</button></li>
+    <%if (config.discord.use_skilldule_chats) {%>
+    <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#discord">Discord</button></li>
+    <% }} %>
+    <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#faq">Help!</button></li>
+  </ul>
+
+</div>
+<div class="modal fade" id="cs" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content bg-dark text-center">
+            <div class="modal-header mx-auto">
+              <h5 class="modal-title" id="exampleModalLongTitle">Scan For Schedule:</h5>
+            </div>
+            <div class="modal-body">
+              <img id="qrcode" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=Example" class="pb-4 mx-auto"/>
+              <br>
+              <p>Scan the QR Code with Camera(iOS)/Google Lens(Andrioid)</p>
+              <div class="border-top my-3"></div>
+              <p>If you can't scan a qr code, send this link to your other device.</p>
+              <div class="text-center"><button class="btn btn-primary" onclick="copyLink()" id="copyLink">Copy Link</button></div>
+<button type="submit" class="btn btn-primary mt-4" data-bs-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</nav>
+
+
+
+<div class="container-fluid">
+  <div class="row justify-content-center text-center">
+    <h4>Happening Now</h4>
+
+        <% if (typeof currPeriod != 'undefined') {%>
+
+
+          <% if (master[day][currPeriod][2] === true || master[day][currPeriod][1] in user) { %>
+            <% if (master[day][currPeriod][1] in user) { %>
+                   <div class="card mt-4" style="width: 15rem; background-color: <% if (user[master[day][currPeriod][1]].length === 4) { %>
+              <% if ("color" in user[master[day][currPeriod][1]][2]) { %>
+                <%= colors[user[master[day][currPeriod][1]][2].color]%>
+                <% } else {%>
+                  <%= master[day][currPeriod][3] %>
+                  <% }} else { %>
+                    <%= master[day][currPeriod][3]%>
+                    <% } %>;">
+                    <div class="card-body"><a data-bs-target="#<%= user[master[day][currPeriod][1]][0].replace(/ /g, "")%>" data-bs-toggle="modal">
+                      <h5 class="card-title"><%= user[master[day][currPeriod][1]][0]  %></h5>
+                      <p class="card-text"><% if ("settings" in user && user.settings.tname) {%>
+                        <%= user[master[day][currPeriod][1]][1] %><br>
+                        <%} else if (!("settings" in user)) { %>
+                          <%= user[master[day][currPeriod][1]][1] %><br>
+                      <%} if ("settings" in user && user.settings.rnumber) {%>
+                          <%= user[master[day][currPeriod][1]][3] %><br>
+                        <% } if ("settings" in user && user.settings.period) {%>
+                            <%= master[day][currPeriod][1] %><br> %>
+                        <%} %>
+                <% } else {%>
+                  <div class="card mt-4" style="width: 15rem; background-color: <%= master[day][currPeriod][3] %>">
+                    <div class="card-body"><a data-bs-target="#<%= master[day][currPeriod][1].replace(/ /g, "")%>" data-bs-toggle="modal">
+                    <h5 class="card-title"><%= master[day][currPeriod][1] %></h5>
+                    <p class="card-text">
+                <% }%>
+
+          <%= timeString(master[day][currPeriod][0]) %></p>
+                </div></a>
+      </div>
+      <%} else {%>
+        <div class="card mt-4 noblock" style="width: 15rem;">
+        <div class="card-body">
+          <h5 class="card-title">No Current Class</h5>
+          <p class="card-text">Free Time</p>
+        </div></div>
+      <% }} else { %>
+        <div class="card mt-4 noblock" style="width: 15rem;">
+        <div class="card-body">
+          <h5 class="card-title">No Current Class</h5>
+          <p class="card-text">Free Time</p>
+        </div></div>
+    <%  } %>
+
+      </div>
+
+
+
+<div class="pt-4 pb-4 row justify-content-center text-center">
+    <h4>Up Next</h4>
+
+        <% if (typeof nextPeriod != 'undefined') {%>
+
+        <% if (master[day][nextPeriod][2] === true || master[day][nextPeriod][1] in user) { %>
+          <% if (master[day][nextPeriod][1] in user) { %>
+                 <div class="card mt-4" style="width: 15rem; background-color: <% if (user[master[day][nextPeriod][1]].length === 4) { %>
+            <% if ("color" in user[master[day][nextPeriod][1]][2]) { %>
+              <%= colors[user[master[day][nextPeriod][1]][2].color]%>
+              <% } else {%>
+                <%= master[day][nextPeriod][3] %>
+                <% }} else { %>
+                  <%= master[day][nextPeriod][3]%>
+                  <% } %>;"><a data-bs-target="#<%= user[master[day][nextPeriod][1]][0].replace(/ /g, "")%>" data-bs-toggle="modal">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= user[master[day][nextPeriod][1]][0]  %></h5>
+                    <p class="card-text"><% if ("settings" in user && user.settings.tname) {%>
+                      <%= user[master[day][nextPeriod][1]][1] %><br>
+                      <%} else if (!("settings" in user)) { %>
+                        <%= user[master[day][nextPeriod][1]][1] %><br>
+                    <%} if ("settings" in user && user.settings.rnumber) {%>
+                        <%= user[master[day][nextPeriod][1]][3] %><br>
+                        <% } if ("settings" in user && user.settings.period) {%>
+                            <%= master[day][nextPeriod][1] %><br> %>
+                        <%} %>
+              <% } else {%>
+                <div class="card mt-4" style="width: 15rem; background-color: <%= master[day][nextPeriod][3] %>">
+                  <div class="card-body"><a data-bs-target="#<%= master[day][nextPeriod][1].replace(/ /g, "")%>" data-bs-toggle="modal">
+                  <h5 class="card-title"><%= master[day][nextPeriod][1] %></h5>
+                  <p class="card-text">
+              <% }%>
+
+        <%= timeString(master[day][nextPeriod][0]) %></p>
+      </div></a>
+    </div>
+      <%} else {%>
+        <div class="card mt-4 noblock" style="width: 15rem;">
+        <div class="card-body">
+          <h5 class="card-title">Nothing's Next</h5>
+          <p class="card-text">Free Time</p>
+        </div></div>
+      <% }} else { %>
+        <div class="card mt-4 noblock" style="width: 15rem;">
+        <div class="card-body">
+          <h5 class="card-title">Nothing's Next</h5>
+          <p class="card-text">Free Time</p>
+        </div></div>
+      <%  } %>
+
+  </div>
+  <div class="border-top my-3"></div>
+  <div class="row pt-4 text-center desktop">
+    <% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].forEach((day, dayIndex) => { %>
+    <div class="col">
+      
+      <h4><%= day%></h4>
+      <div class="d-flex">
+      <ul class="mx-auto justify-content-center">
+
+        <% master[dayIndex+1].forEach(function(block) { %>
+          <% if (block[2] === true || block[1] in user) { %>
+
+            <li>     <% if (block[1] in user) { %>
+                   <a data-bs-target="#<%= user[block[1]][0].replace(/ /g, "")%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <% if (user[block[1]].length === 4) { %>
+              <% if ("color" in user[block[1]][2]) { %>
+                <%= colors[user[block[1]][2].color]%>
+                <% } else {%>
+                  <%= block[3] %>
+                  <% }} else { %>
+                    <%= block[3]%>
+                    <% } %>;">
+
+                    <div class="card-body">
+                      <h5 class="card-title"><%= user[block[1]][0]  %></h5>
+                      <p class="card-text"><% if ("settings" in user && user.settings.tname) {%>
+                        <%= user[block[1]][1] %><br>
+                        <%} else if (!("settings" in user)) { %>
+                          <%= user[block[1]][1] %><br>
+                      <%} if ("settings" in user && user.settings.rnumber) {%>
+                          <%= user[block[1]][3] %><br>
+                        <% } if ("settings" in user && user.settings.period) {%>
+                            <%= block[1] %><br> %>
+                        <%} %>
+                <% } else {%>
+                  <a data-bs-target="#<%=block[1]%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <%= block[3] %>">
+                    <div class="card-body">
+                    <h5 class="card-title"><%= block[1] %></h5>
+                    <p class="card-text">
+                <% }%>
+
+          <%= timeString(block[0]) %></p>
+                </div>
+      </div></a>
+    </li>
+          <% }}) %>
+      </ul>
+</div>
+  </div>
+  <% }) %>
+        
+    </div>
+    <div class="row pt-4 text-center mobile">
+      <div class="col">
+        <h4><%= dayName%></h4>
+        <div class="d-flex">
+        <ul class="mx-auto justify-content-center">
+          <% if (master[day].length > 0) {%>
+          <% master[day].forEach(function(block) { %>
+            <% if (block[2] === true || block[1] in user) { %>
+
+              <li>     <% if (block[1] in user) { %>
+                     <a data-bs-target="#<%= user[block[1]][0].replace(/ /g, "")%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <% if (user[block[1]].length === 4) { %>
+                <% if ("color" in user[block[1]][2]) { %>
+                  <%= colors[user[block[1]][2].color]%>
+                  <% } else {%>
+                    <%= block[3] %>
+                    <% }} else { %>
+                      <%= block[3]%>
+                      <% } %>;">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= user[block[1]][0]  %></h5>
+                        <p class="card-text"><% if ("settings" in user && user.settings.tname) {%>
+                          <%= user[block[1]][1] %><br>
+                          <%} else if (!("settings" in user)) { %>
+                            <%= user[block[1]][1] %><br>
+                        <%} if ("settings" in user && user.settings.rnumber) {%>
+                            <%= user[block[1]][3] %><br>
+                          <% } if ("settings" in user && user.settings.period) {%>
+                              <%= block[1] %><br> %>
+                          <%} %>
+                  <% } else {%>
+                    <a data-bs-target="#<%= block[1].replace(/ /g, "")%>" data-bs-toggle="modal"><div class="card mt-4" style="width: 15rem; background-color: <%= block[3] %>">
+                      <div class="card-body">
+                      <h5 class="card-title"><%= block[1] %></h5>
+                      <p class="card-text">
+                  <% }%>
+
+            <%= timeString(block[0]) %></p>
+                  </div>
+        </div></a>
+                </li>
+            <% }})} else { %>
+              <div class="card mt-4 noblock" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">No Classes Today</h5>
+                <p class="card-text">It must be a weekend.</p>
+              </div></div>
+              <% } %>
+        </ul>
+  </div>
+    </div>
+    </div>
+    <div class="row pt-4 text-center">
+      <p class="lead">WIT&SKILLDULE is a division of the <a href="https://media.discordapp.net/attachments/784994278966951936/981220444680118312/binbows.png" target="_blank">JSFFund of America</a></p>
+  </div>
+
+    <div class="modal fade" id="setSchedule" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Setup WIT&SKILLDULE</h5>
+      </div>
+      <div class="modal-body desktop">
+
+        <p>To get your classes, open the console(CMD-OPT-J on Chrome) on the <% if (config.general.import_option === "portal") {%><a href="https://fwparker.myschoolapp.com/app/student#studentmyday/progress" target="_blank">Progress page of the Parker Portal</a><%} else {%><a href="https://classroom.google.com/">Classes page on Google Classroom</a><% } %>, then paste the code(from the button below) and hit return.</p>
+<div class="text-center codeBtn"><button class="btn btn-primary" onclick="copyCode()" id="copyCode">Copy Code</button></div>
+<div id="code" class="hidden pt-4">
+<p>Select and copy this code:</p>
+<pre class="bg-light text-black pt-4">
+  
+  <code id="grabber">
+    <% if (config.general.import_option === "portal"){%>
+    courses = document.getElementById("coursesContainer")
+
+    out = []
+    for (let c = 0; c < courses.children.length; c++) {
+        try {
+        o = [courses.children[c].getElementsByTagName("h3")[0].innerText, courses.children[c].getElementsByClassName("group-owner-name")[0].innerText, courses.children[c].getElementsByTagName("h5")[0].innerText.split(" |")[0]]
+        out.splice(out.length, 0, o);
+        } catch(err) {
+          //pass
+        }
+    }
+    console.log(JSON.stringify(out))
+    <% } else {%>
+      courses = document.getElementsByClassName("rZXyy")
+out = []
+for (let c = 0; c < courses.length; c++) {
+  try {
+    if (courses[c].getElementsByClassName("eDfb1d")[0].children[1].innerText != "") {
+      o = [courses[c].getElementsByClassName("z3vRcc-ZoZQ1")[0].innerText+" - 1 ("+courses[c].getElementsByClassName("eDfb1d")[0].children[1].innerText+")", courses[c].getElementsByClassName("jJIbcc")[0].innerText]
+      out.splice(out.length, 0, o);
+    }
+  } catch (err) {
+      console.log(err)
+  }
+}
+console.log(JSON.stringify(out))
+
+    <% }%>
+  </code>
+</pre>
+</div>
+      <form action="/processInput" method="get">
+        <div class="form-group mb-3 ml-3 mr-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Paste Output Here</label>
+  <textarea class="form-control" name="classes" id="setScheduleTextArea" rows="3" required></textarea>
+</div><div class="form-group mb-3 ml-3 mr-3">
+      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button></div></form>
+      <p>After setup, you can copy your schedule to a phone by clicking copy schedule from the dropdown. View Lunches, MXes and Homework by clicking the associated blocks.</p>
+  </div>
+  <div class="modal-body mobile">
+    <p>Setup must be preformed on a computer. If you are on a computer expand your browser.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content bg-dark">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Update WIT&SKILLDULE</h5>
+  </div>
+  <div class="modal-body">
+    <p>A new update is available to WIT&SKILLDULE. To update, select change schedule from the dropdown and follow directions.</p>
+    <div class="text-center"><button class="btn btn-primary" data-bs-dismiss="modal">OK</button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="v3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content text-center bg-dark">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">WIT&SKILLDULE v3</h5>
+  </div>
+  <div class="modal-body">
+    <p>Introducing Skilldule Chats. Connect with your classmates and discuss homework all on skilldule. Head to the discord popup through the menu to get connected to Discord and load up your classes!</p>
+  <img class="mx-auto" width="100%" src="images/chats.png"/>
+    <div class="text-center pt-4"><button class="btn btn-primary" onclick="window.location.replace('/setVersion?version=v3');" data-bs-dismiss="modal">OK</button></div>
+</div>
+</div>
+</div>
+</div>
+<% if ("settings" in user) { %>
+  <% if (config.discord.use_skilldule_chats) {%>
+<div class="modal fade" id="discord" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content bg-dark">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Connect Discord</h5>
+    </div>
+    <div class="modal-body">
+      <%if (!user.settings.hasOwnProperty("discord")) {%>
+      <p>Connect to our discord to get access to Skilldule chats.</p>
+      <div class="text-center"><a href="<%- config.discord.oauth2_url%>"><button class="btn btn-primary"">Connect</button></a></div>
+     <%} else {%>
+      <p>Already Connected</p>
+      <%}%>
+  </div>
+  </div>
+  </div>
+  </div>
+  <%}}%>
+<% for (const [k, v] of Object.entries(homework)) {%>
+<div class="modal fade" id="<%= k.replace(/ /g, "")%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= k %></h5>
+        <button type="button" class="btn-close btn-close-white" aria-label="Close" data-bs-dismiss="modal"></button>
+
+      </div>
+      <div class="modal-body">
+        <div class="d-flex">
+        <ul class="mx-auto justify-content-center">
+          <% try {%>
+          <%  if (Object.entries(v.hw).length > 0) { %>
+            <%  for (const [key, value] of Object.entries(v.hw)) {%>
+              <li><div class="card mt-4" style="width: 20rem; background-color: <%= colors[v.block] %>">
+                        <div class="card-body">
+                        <h5 class="card-title text-center"><%= key %></h5>
+                        <p class="card-text">
+
+                          <% value.forEach(function(element) { %>
+                            <%- element %><br>
+                      <%    })%>
+
+                      </p>
+                    </div>
+          </div></li>
+            <% }} else { %>
+              <li><div class="card mt-4" style="width: 20rem; background-color: <%= colors[v.block] %>">
+                        <div class="card-body">
+                        <h5 class="card-title text-center">No Homework!</h5>
+                    </div>
+              </div></li>
+
+              <%}} catch {%>
+                Please reset your schedule
+                <%}%>
+        </ul>
+  </div>
+
+
+    </div>
+    </div>
+
+  </div>
+</div>
+<% } %>
+<div class="modal fade" id="homework" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Homework</h5>
+        <button type="button" class="btn-close btn-close-white" aria-label="Close" data-bs-dismiss="modal"></button>
+
+      </div>
+      <div class="modal-body">
+        <div class="d-flex">
+        <ul class="mx-auto justify-content-center">
+          <%  if (Object.entries(dates).length > 0) { %>
+
+            <%  for (const [key, value] of dates) {%>
+              <h4 class="pt-4 text-center"><%= key%></h4>
+              <% for (const [k, v] of Object.entries(value)) { %>
+                <% if (v["hw"].length > 0) {%>
+                <li>
+                <div class="card mt-4" style="width: 20rem; background-color: <%= colors[v.block]%>">
+                        <div class="card-body">
+                        <h5 class="card-title text-center"><%= k %></h5>
+                        <p class="card-text">
+
+                        <% v["hw"].forEach(function(element) { %>
+                          <%- element %><br>
+                    <%    })%>
+
+                      </p>
+                    </div>
+          </div></li><%  }}%>
+
+            <% }} else { %>
+              <li><div class="card mt-4" style="width: 20rem; background-color: #0072CF">
+                        <div class="card-body">
+                        <h5 class="card-title text-center">Setup Homework!</h5>
+                    </div>
+              </div></li>
+
+              <%}%>
+        </ul>
+  </div>
+
+
+    </div>
+    </div>
+
+  </div>
+</div>
+<% if ("settings" in user) {%>
+<div class="modal fade" id="settings" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content bg-dark">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Settings</h5>
+  </div>
+  <div class="modal-body">
+    <form action="/setSettings" method="get">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" name="tname" value="true" id="flexSwitchCheckChecked" <% if (user.settings.tname) { %> checked <% } %>>
+        <label class="form-check-label" for="flexSwitchCheckChecked">Display Teacher Name</label>
+      </div>
+      <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" name="rnumber" value="true" id="flexSwitchCheckDefault" <% if (user.settings.rnumber) { %> checked <% } %>>
+    <label class="form-check-label" for="flexSwitchCheckDefault">Display Room Number</label>
+  </div>
+  <div class="form-check form-switch">
+<input class="form-check-input" type="checkbox" name="period" value="true" id="flexSwitchCheckDefault" <% if (user.settings.period) { %> checked <% } %>>
+<label class="form-check-label" for="flexSwitchCheckDefault">Display Period</label>
+</div>
+<div class="form-check form-switch">
+<input class="form-check-input" type="checkbox" name="pe" value="true" id="flexSwitchCheckDefault" <% if (user.settings.pe) { %> checked <% } %>>
+<label class="form-check-label" for="flexSwitchCheckDefault">PE Exemption</label>
+</div>
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Assignment Webcal URL:</label>
+    <input type="text" class="form-control" name="homework" id="exampleInputEmail1" aria-describedby="emailHelp" <% if (user.settings.homework) { %> placeholder="<%= user.settings.homework%>" <% } %>>
+    <div id="emailHelp" class="form-text">Get this by clicking the rotated wifi symbol on the Calender page of the Parker Portal. Once in the menu right-click Assignments and select "Copy Link Address" </div>
+  </div>
+  <% if (config.gc.use_gc) {%>
+  <% if (user.settings.hasOwnProperty("classroom")) {%>
+  <% for (var [key, value] of Object.entries(homework)) {%>
+    <% if (key != "MX" && key != "Lunch") {%>
+    <div class="form-group">
+  <label for="sel1"><%=key%></label>
+  <select name="<%=key%>"class="form-control" id="sel1">
+    <option>Portal</option>
+    <% for (var [k, v] of Object.entries(gc_courses)) {%>
+    <option label="<%=v%>" <% if (user.settings.gcconfig[key] === k) { %>
+      selected
+    <%}%>><%=k%></option>
+    <%}%>
+  </select>
+</div>
+<%}}} else {%>
+  <a href="<%= classroom_link %>">Connect To Google Classroom</a>
+  <%}%>
+  <%}%>
+  <div class="d-flex justify-content-between">
+  <button class="btn btn-danger mt-4" type="button" data-bs-dismiss="modal">Cancel</button><button class="btn btn-primary mt-4" type="submit" data-bs-dismiss="modal">Save</button></div>
+  </form>
+
+</div>
+</div>
+</div>
+</div>
+<% } %>
+<div class="modal fade" id="faq" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content bg-dark">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Help!</h5>
+  </div>
+  <div class="modal-body">
+    <h5>Setup:</h5>
+    <p>Setup tutorials for homework, Skilldule Chats and exporting are available <a href="/setup">here</a>.</p>
+    <h5>FAQ:</h5>
+    <div class="accordion accordion-flush text-black" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        One of my classes isn't showing up.
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Please contact us at the email below and include the full name of the class as listed on the Parker Portal.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        My schedule reset!
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        This is most likely because you deleted the cookies associated with WIT&SKILLDULE. To prevent further resetting, refrain from deleting Skilldule's cookies (because they are very tasty).
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        How do I find lunches?
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        To get more information about different classes/blocks click on the tiles.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+        Who started the fire?
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Ryan started the fire.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="border-top my-3"></div>
+<h5>Contact Us:</h5>
+<p>Email: <a href="mailto:jadee@fwparker.org">Jack Adee</a></p>
+    <div class="text-center"><button class="btn btn-primary" data-bs-dismiss="modal">OK</button></div>
+</div>
+</div>
+</div>
+</div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

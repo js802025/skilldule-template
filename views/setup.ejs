@@ -1,0 +1,274 @@
+<html lang="en"><head><style id="stndz-style"></style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Primary Meta Tags -->
+<title>WIT&amp;SKILLDULE</title>
+<meta name="title" content="WIT&amp;SKILLDULE">
+<meta name="description" content="A schedule manager.">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-J7JBLVP6H9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J7JBLVP6H9');
+</script>
+
+
+    <!-- <link href="parkdule.css" rel="stylesheet"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="images/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="images/favicon-128.png" sizes="128x128">
+    <meta name="application-name" content="&nbsp;">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="images/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="images/mstile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="images/mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="images/mstile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="images/mstile-310x310.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+
+    <script src="lib/knockout-3.3.0.debug.js"></script>
+    <script src="lib/knockout.mapping-debug.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="client.js"></script>
+    <script>
+    $(function () {
+
+      if(false) {
+        var myModal = new bootstrap.Modal(document.getElementById('update'));
+      myModal.show();
+    }
+
+    })
+    </script>
+    <style>
+
+
+    </style>
+    <title>WITANDSKILLDULE</title>
+  </head>
+  <body class="bg-dark text-white">
+  <div class="container-fluid text-center">
+    <a href="/"><button class="abs-center-x no-click btn btn-dark" style="font-size: 25px;">WIT&amp;SKILLDULE</button></a>
+<!-- <div class="btn-group dropstart ms-auto">
+  <button type="button" class="btn btn-dark" style="font-size: 25px;" data-bs-toggle="dropdown" aria-expanded="false">
+    ☰
+  </button>
+  <ul class="dropdown-menu" style="background-color: #0072CF">
+    <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#cs">Copy Schedule</button></li>
+    <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#setSchedule">Change Schedule</button></li>
+
+    <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#settings">Settings</button></li>
+
+    <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#faq">Help!</button></li>
+  </ul>
+
+</div> -->
+
+
+  </div>
+
+
+<div class="container-fluid">
+
+
+<h2>Setting Up Skilldule</h2>
+<p class="lead">This page includes tutorials on how to fully setup Skilldule. If you have any questions, please contact <a href="mailto:ctc@fwparker.org">CTC</a>.
+<div class="pt-4 pb-4 row justify-content-center">
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item" style="background-color: #F5B700">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button text-light" style="background-color: #F5B700" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              #1 Adding Your Schedule
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+                <div class="text-center"><iframe width="560" height="315" src="https://www.youtube.com/embed/uJLWr5I6c_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <ol>
+                    <li>Click the Get Started button on the home page</li>
+                    <li>Click the Copy Code Button</li>
+                    <li>Go to the progress page of the portal</li>
+                    <li>Use CMD-Shift-I(Mac), CTRL-Shift-I(Windows) to open up the console.</li>
+                    <li>Paste the code into the console</li>
+                    <li>Copy the text that the code returns</li>
+                    <li>Paste the text into Skilldule</li>
+                    <li>Click the Submit button</li>
+                </ol>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" style="background-color: #DB0030;">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button style="background-color: #DB0030;"class="accordion-button collapsed text-light" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              #2 Adding Homework
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+              <div class="text-center"><iframe width="560" height="315" src="https://www.youtube.com/embed/Powzh9PQ0SU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+              Portal:
+              <ol>
+                <li>Open Skilldule Settings</li>
+                <li>In another tab open the Portal, and click the Calender Tab</li>
+                <li>Click the rotated wifi symbol</li>
+                <li>Under My Calender, open the individual filter feeds menu.</li>
+                <li>Right Click Assignments</li>
+                <li>Click Copy Link Address</li>
+                <li>Paste link under Assignment Webcal URL</li>
+                <li>Click the Save button</li>
+            </ol>
+            Google Classroom:
+            <ol>
+                <li>Open Skilldule Settings</li>
+                <li>Click Connect to Google Classroom</li>
+                <li>Follow the instructions and make sure you approve all the permissions</li>
+                <li>After it returns you to Skilldule, go back to settings</li>
+                <li>A list of all your classes with a dropdown under each will appear</li>
+                <li>Select whether you want the class to retirve homework from the Portal(default) or choose a Google Classroom Class from the dropdown to link)
+                <li>Click the Save button</li>
+            </ol>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" style="background-color: #2CBF1B">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button collapsed text-light" style="background-color: #2CBF1B" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              #3 Connecting to Skilldule Chats
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+              <div class="text-center"><iframe width="560" height="315" src="https://www.youtube.com/embed/QPyKaLJl1Cc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>   
+                <ol>
+                    <li>Open the Discord menu</li>
+                    <li>Click Connect</li>
+                    <li>Log in to Discord/Create an Account</li>
+                    <li>Click Authorize</li>
+                    <li>You will now be in the Skilldule Chats Discord Server, under the Classes section will be all of your classes</li>
+                </ol>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" style="background-color: #FE5E41">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button class="accordion-button collapsed text-light" style="background-color: #FE5E41" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                #4 Modifying Settings & Exporting
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+              <div class="accordion-body">
+                <div class="text-center"><iframe width="560" height="315" src="https://www.youtube.com/embed/3CriEfDDNgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> 
+                Modifying Settings:
+                <ol>
+                    <li>Open the Settings menu</li>
+                    <li>There you will find all the settings for the Skilldule</li>
+                    <li>Choose the options you want.</li>
+                    <li>Click the Save button</li>
+                </ol>
+                Exporting:
+                <ol>
+                    <li>Open the Copy Schedule menu</li>
+                    <li>Scan the QR with your mobile device Camera App(Apple), Google Lens(Andrioid)</li>
+                    <li>On your mobile device, add Skilldule to your homescreen by clicking share button and then add to home screen</li>
+                    <li>OR Copy the link from the Copy Scedule menu and open on another device</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="row footer pt-4 text-center">
+        <p class="lead">WIT&SKILLDULE is a division of the <a href="https://media.discordapp.net/attachments/784994278966951936/981220444680118312/binbows.png" target="_blank">JSFFund of America</a></p>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="faq" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content bg-dark">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Help!</h5>
+  </div>
+  <div class="modal-body">
+    <h5>FAQ:</h5>
+    <div class="accordion accordion-flush text-black" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        One of my classes isn't showing up.
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Please contact us at the email below and include the full name of the class as listed on the Parker Portal.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        My schedule reset!
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        This is most likely because you deleted the cookies associated with WIT&amp;SKILLDULE. To prevent further resetting, refrain from deleting Skilldule's cookies (because they are very tasty).
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+        Who started the fire?
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Ryan started the fire.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="border-top my-3"></div>
+<h5>Contact Us:</h5>
+<p>Email: <a href="mailto:jadee@fwparker.org">Jack Adee</a></p>
+    <div class="text-center"><button class="btn btn-primary" data-bs-dismiss="modal">OK</button></div>
+</div>
+</div>
+</div>
+</div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+
+
+</div></body></html>
