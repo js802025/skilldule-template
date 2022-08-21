@@ -131,7 +131,7 @@
 
 
           <% if (master[day][currPeriod][2] === true || master[day][currPeriod][1] in user) { %>
-            <% if (master[day][currPeriod][1] in user && user[master[day][nextPeriod][1]][2].main != true) { %>
+            <% if (master[day][currPeriod][1] in user && user[master[day][currPeriod][1]][2].main != true) { %>
                    <div class="card mt-4" style="width: 15rem; background-color: <% if (user[master[day][currPeriod][1]].length === 4) { %>
               <% if ("color" in user[master[day][currPeriod][1]][2]) { %>
                 <%= colors[user[master[day][currPeriod][1]][2].color]%>
