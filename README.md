@@ -3,7 +3,7 @@
 
 ## Skilldule
 
-![Skilldule Main Page](https://i.ibb.co/YkHrssR/image.png)
+![Skilldule Main Page](https://i.ibb.co/YkHrssR/image.png)<br/>
 Skilldule is a schedule viewer I made in the summer of 2021 for my high school. Since its creation, I've added features such as viewing the lunch, assemblies, homework and most recently chats(using discord). The idea is to have everything very easily accessible and in ne place. As I was preparing the schedule for this year I started a rewrite of the code as it was a bit of a mess lol. As I was rewriting I decided to make a template(this repo). This template should allow any school that would wish, with a bit of set up to have their own version of skilldule. 
 
 
