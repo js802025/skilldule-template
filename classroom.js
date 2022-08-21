@@ -64,7 +64,7 @@ function getToken(credentials, code, req, res, callback) {
       callback(req, res, token)
     });
   }
-async function refreshAccessToken(credentials, refreshToken, user, res, master, currPeriod, nextPeriod, timeString, day, colors, dayName, req, callback, lunch, assemblies, config) {
+async function refreshAccessToken(credentials, refreshToken, user, res, master, currPeriod, nextPeriod, timeString, day, colors, dayName, req, lunch, assemblies, callback) {
   const {client_secret, client_id, redirect_uris} = credentials.installed;
   const oAuth2Client = new google.auth.OAuth2(
       client_id, client_secret, redirect_uris[0]);
@@ -76,7 +76,7 @@ async function refreshAccessToken(credentials, refreshToken, user, res, master, 
   //   courseWork[courseId] = await getCourseWork(oAuth2Client, courseId)
   // }
 //  console.log(courseWork)
-  callback(user, res, master, currPeriod, nextPeriod, timeString, day, colors, dayName, req, courses, oAuth2Client, lunch, assemblies, config)// => Store access token
+  callback(user, res, master, currPeriod, nextPeriod, timeString, day, colors, dayName, req, courses, oAuth2Client, lunch, assemblies)// => Store access token
 	};
 
 

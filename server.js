@@ -281,7 +281,7 @@ app.get('/', (req, res) => {
         if (err) return console.log('Error loading client secret file:', err);
         // Authorize a client with credentials, then call the Google Classroom API.
         credentials = JSON.parse(content)
-        classroom.refreshAccessToken(credentials, user.settings.classroom, user, res, master, currPeriod, nextPeriod, timeString, day, colors, dayName, req, retrieveHomework);
+        classroom.refreshAccessToken(credentials, user.settings.classroom, user, res, master, currPeriod, nextPeriod, timeString, day, colors, dayName, req, lunch, assemblies, retrieveHomework);
 
       });
 
